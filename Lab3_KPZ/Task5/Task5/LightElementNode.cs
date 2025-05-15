@@ -33,6 +33,21 @@ namespace Task5
             Children.Add(child);
         }
 
+        public void RenderElement()
+        {
+            OnCreated();
+            OnStylesApplied();
+            OnClassListApplied();
+            OnTextRendered();
+            OnInserted();
+        }
+
+        protected virtual void OnCreated() { }
+        protected virtual void OnInserted() { }
+        protected virtual void OnStylesApplied() { }
+        protected virtual void OnClassListApplied() { }
+        protected virtual void OnTextRendered() { }
+
         public override string GetOuterHTML()
         {
             string classes = CssClasses.Count > 0 ? $" class=\"{string.Join(" ", CssClasses)}\"" : string.Empty;
@@ -51,5 +66,4 @@ namespace Task5
             return string.Join("", Children.Select(child => child.GetOuterHTML()));
         }
     }
-
 }

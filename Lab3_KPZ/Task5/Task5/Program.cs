@@ -21,6 +21,17 @@ class Program
         div.AddChild(h1);
         div.AddChild(p);
 
+        div.RenderElement();
+        h1.RenderElement();
+        p.RenderElement();
+
+        var addClassCommand = new AddClassCommand(div, "additional-class");
+        var addTextCommand = new AddTextCommand(p, "This text was added via command!");
+
+        var invoker = new CommandInvoker();
+        invoker.Invoke(addClassCommand);
+        invoker.Invoke(addTextCommand);
+
         Console.WriteLine(div.GetOuterHTML());
     }
 }
