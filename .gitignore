@@ -1,0 +1,29 @@
+## Build
+bin/
+obj/
+
+## Visual Studio
+.vs/
+*.user
+*.suo
+
+## OS generated
+.DS_Store
+Thumbs.db
+
+## Logs
+*.log
+
+## Rider (JetBrains)
+.idea/
+*.sln.iml
+
+## NuGet packages
+*.nupkg
+packages/
+
+## Others
+*.db
+*.sqlite
+*.bak
+*.tmp
