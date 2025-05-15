@@ -10,5 +10,7 @@ namespace Task5
     {
         public abstract string GetOuterHTML();
         public abstract string GetInnerHTML();
+
+        public abstract void Accept(IVisitor visitor);
     }
 }

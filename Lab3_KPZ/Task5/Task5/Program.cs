@@ -25,14 +25,20 @@ class Program
         h1.RenderElement();
         p.RenderElement();
 
+        var styleVisitor = new StyleVisitor("highlight");
+
+        div.Accept(styleVisitor);
+        h1.Accept(styleVisitor);
+        p.Accept(styleVisitor);
+
+        Console.WriteLine(div.GetOuterHTML());
+
         var addClassCommand = new AddClassCommand(div, "additional-class");
         var addTextCommand = new AddTextCommand(p, "This text was added via command!");
 
         var invoker = new CommandInvoker();
         invoker.Invoke(addClassCommand);
         invoker.Invoke(addTextCommand);
-
-        Console.WriteLine(div.GetOuterHTML());
 
         var iterator = div.CreateIterator();
         while (iterator.HasNext())
