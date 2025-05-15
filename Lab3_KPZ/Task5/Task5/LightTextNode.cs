@@ -24,6 +24,12 @@ namespace Task5
         {
             return Text;
         }
+
+        public override void Accept(IVisitor visitor)
+        {
+            visitor.Visit(this);
+        }
+
     }
 
 }

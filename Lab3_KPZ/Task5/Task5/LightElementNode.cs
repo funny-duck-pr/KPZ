@@ -72,5 +72,13 @@ namespace Task5
             return new LightElementNodeIterator(Children);
         }
 
+        public override void Accept(IVisitor visitor)
+        {
+            visitor.Visit(this); 
+            foreach (var child in Children)
+            {
+                child.Accept(visitor); 
+            }
+        }
     }
 }
