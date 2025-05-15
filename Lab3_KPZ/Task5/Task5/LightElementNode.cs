@@ -66,5 +66,11 @@ namespace Task5
 
             return string.Join("", Children.Select(child => child.GetOuterHTML()));
         }
+
+        public IIterator CreateIterator()
+        {
+            return new LightElementNodeIterator(Children);
+        }
+
     }
 }

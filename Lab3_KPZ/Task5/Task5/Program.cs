@@ -33,5 +33,12 @@ class Program
         invoker.Invoke(addTextCommand);
 
         Console.WriteLine(div.GetOuterHTML());
+
+        var iterator = div.CreateIterator();
+        while (iterator.HasNext())
+        {
+            var child = iterator.Next();
+            Console.WriteLine(child.GetOuterHTML());
+        }
     }
 }
