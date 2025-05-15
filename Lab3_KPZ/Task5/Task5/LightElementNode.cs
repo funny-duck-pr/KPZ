@@ -21,6 +21,7 @@ namespace Task5
             SelfClosing = selfClosing;
             CssClasses = new List<string>();
             Children = new List<LightNode>();
+            OnCreated(); 
         }
 
         public void AddClass(string cssClass)

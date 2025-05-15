@@ -9,13 +9,13 @@ class Program
 {
     static void Main()
     {
-        var div = new LightElementNode("div", isBlockElement: true);
+        var div = new LifecycleDebugElement("div", isBlockElement: true);
         div.AddClass("container");
 
-        var h1 = new LightElementNode("h1", isBlockElement: false);
+        var h1 = new LifecycleDebugElement("h1", isBlockElement: false);
         h1.AddChild(new LightTextNode("Welcome to LightHTML"));
 
-        var p = new LightElementNode("p", isBlockElement: true);
+        var p = new LifecycleDebugElement("p", isBlockElement: true);
         p.AddChild(new LightTextNode("This is a simple example of using LightHTML."));
 
         div.AddChild(h1);
